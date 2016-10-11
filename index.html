@@ -15,23 +15,23 @@
 
 <body>
   <!-- break time set with + and - buttons -->
-  <h3 id="break">Break Time</h3>
-  <p>5 minutes</p> 
-  <button id="breakPlus">+</button>
-  <button id="breakminus">-</button> 
-
+  <div class="breakAdjust">
+    <h3 id="break">Break Time</h3>
+    <p id="breakTime">5 minutes</p> 
+    <button id="breakPlus">+</button>
+    <button id="breakMinus">-</button> 
+  </div>
   <!-- work time set with + and - buttons -->
-  <h3 id="work">Work Time</h3>
-  <p>25 minutes</p> 
-  <button id="workPlus">+</button>
-  <button id="workminus">-</button> 
-
+  <div class="workAdjust">
+    <h3 id="work">Work Time</h3>
+    <p id="workTime">1 minutes</p> 
+    <button id="workPlus">+</button>
+    <button id="workMinus">-</button> 
+  </div>
   <!-- need area for elapsed time to show -->
   <div class="clock">
-    <button id="countDown">
-      <h1 id="timeTitle">Work Time</h1>
-      <h1 id="elapsedTime">25:00</h1>
-    </button>
+      <h1 id="timeTitle"></h1>
+      <h1 id="elapsedTime"></h1>
   </div>
 </body>
 </html>
