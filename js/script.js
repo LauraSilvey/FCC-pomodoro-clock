@@ -1,4 +1,3 @@
-// make function that reduces the timer by one second
 var minutes;
 var tensSec = 0;
 var onesSec = 0;
