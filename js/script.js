@@ -7,13 +7,13 @@ var timerOn = false;
 //displays work timer in #elapsedTime area
 function work(){
   $("#timeTitle").html("Work");
-  minutes = $("#workTime").html().match(/\d+/).toString();
+  minutes = $("#workTime").html();
   $("#elapsedTime").html(parseInt(minutes) + ":" + tensSec + onesSec); 
 }
 //displays rest timer in #elapsedTime area
 function rest(){
   $("#timeTitle").html("Break");
-  minutes = $("#breakTime").html().match(/\d+/).toString();
+  minutes = $("#breakTime").html();
   $("#elapsedTime").html(parseInt(minutes) + ":" + tensSec + onesSec);
 }
 //counts down seconds in the ones column 
@@ -66,15 +66,15 @@ $(document).ready(function(){
   });
   // adjusts work time based on plus or minus button clicks
   $("#workPlus, #workMinus").click(function(){
-    var newMinute = $("#workTime").html().match(/\d+/).toString();
+    var newMinute = $("#workTime").html();
     $(this).attr("id") === "workPlus" ? newMinute = parseInt(newMinute) + 1 : newMinute = parseInt(newMinute) - 1;
-    $("#workTime").html(newMinute + " minutes"); 
+    $("#workTime").html(newMinute); 
     work();
   });
   // adjusts rest time based on plus or minus button clicks
   $("#breakPlus, #breakMinus").click(function(){
-    var newMinute = $("#breakTime").html().match(/\d+/).toString();
+    var newMinute = $("#breakTime").html();
     $(this).attr("id") === "breakPlus" ? newMinute = parseInt(newMinute) + 1 : newMinute = parseInt(newMinute) - 1;
-    $("#breakTime").html(newMinute + " minutes");
+    $("#breakTime").html(newMinute);
   });   
 });
