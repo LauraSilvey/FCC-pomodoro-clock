@@ -3,6 +3,7 @@ var tensSec = 0;
 var onesSec = 0;
 var timer;
 var timerOn = false;
+
 //displays work timer in #elapsedTime area
 function work(){
   $("#timeTitle").html("Work");
@@ -54,14 +55,26 @@ function countdown(){
 
 $(document).ready(function(){
   work();
-   $(".clock").click(function(){
-   	if(!timerOn){
-   	 timerOn = true;
-     countdown();
-   	}else{
-   	  timerOn = false;
+  $(".clock").click(function(){
+ 	  if(!timerOn){
+  	  timerOn = true;
+      countdown();
+ 	  }else{
+  	  timerOn = false;
    	  clearTimeout(timer);
-   	}
+    }
   });
-   
+  // adjusts work time based on plus or minus button clicks
+  $("#workPlus, #workMinus").click(function(){
+    var newMinute = $("#workTime").html().match(/\d+/).toString();
+    $(this).attr("id") === "workPlus" ? newMinute = parseInt(newMinute) + 1 : newMinute = parseInt(newMinute) - 1;
+    $("#workTime").html(newMinute + " minutes"); 
+    work();
+  });
+  // adjusts rest time based on plus or minus button clicks
+  $("#breakPlus, #breakMinus").click(function(){
+    var newMinute = $("#breakTime").html().match(/\d+/).toString();
+    $(this).attr("id") === "breakPlus" ? newMinute = parseInt(newMinute) + 1 : newMinute = parseInt(newMinute) - 1;
+    $("#breakTime").html(newMinute + " minutes");
+  });   
 });
