@@ -15,23 +15,42 @@
 
 <body>
   <!-- break time set with + and - buttons -->
-  <div class="breakAdjust">
-    <h3 id="break">Break Time</h3>
-    <p id="breakTime">5 minutes</p> 
-    <button id="breakPlus">+</button>
-    <button id="breakMinus">-</button> 
-  </div>
+  <div class="container-fluid text-center">
+    <h1 id="title">Pomodoro Timer</h1>
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-2">
+        <p id="break">Break Time</p>
+        <div class="time-adjust">
+          <button id="breakPlus">+</button>
+        </div>
+        <div class="time-adjust">
+          <p id="breakTime">5</p> 
+        </div>
+        <div class="time-adjust">
+          <button id="breakMinus">-</button>
+        </div> <!-- time-adjust div -->
+      </div> <!-- col div -->
   <!-- work time set with + and - buttons -->
-  <div class="workAdjust">
-    <h3 id="work">Work Time</h3>
-    <p id="workTime">25 minutes</p> 
-    <button id="workPlus">+</button>
-    <button id="workMinus">-</button> 
-  </div>
+      <div class="col-sm-2">
+        <p id="work">Work Time</p>
+        <div class="time-adjust">
+          <button id="workPlus">+</button>
+        </div>
+        <div class="time-adjust">
+          <p id="workTime">25</p> 
+        </div>
+        <div class="time-adjust">
+          <button id="workMinus">-</button> 
+        </div>
+      </div> <!-- col div -->
+      <div class="col-sm-4"></div>
+  </div> <!-- row div -->    
   <!-- area for elapsed time to show -->
   <div class="clock">
       <h1 id="timeTitle"></h1>
       <h1 id="elapsedTime"></h1>
   </div>
+  </div> <!-- container div -->
 </body>
 </html>

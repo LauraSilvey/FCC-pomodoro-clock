@@ -1,1 +1,45 @@
+body {
+  background-color: #988B8E;
+  
+}
+
+#title {
+  margin-top: 125px;
+}
+
+.row {
+  margin-top: 50px;
+}
+
+.time-adjust {
+  display: inline-block;
+}
+
+button {
+  border: none;
+  background: none;
+  margin-right: 5px;
+  margin-left: 5 px;
+  font-size: 15px;
+}
+
+p {
+  font-size: 22px;
+}
+
+.clock {
+  border-radius: 50%;
+  border: medium solid black;
+  width: 300px;
+  height: 300px;
+  padding-top: 30px;
+  margin: 55px auto;
+  display: inline-block;
+
+  background-color: white;
+}
+
+#elapsedTime {
+  margin-top: 100px;
+}
 
