@@ -1,10 +1,11 @@
 body {
   background-color: #988B8E;
-  
 }
 
 #title {
-  margin-top: 125px;
+  margin-top: 100px;
+  font-family: 'Bubblegum Sans', cursive;
+  font-size: 75px;
 }
 
 .row {
@@ -23,8 +24,13 @@ button {
   font-size: 15px;
 }
 
+button:focus {
+  outline: none;
+}
+
 p {
   font-size: 22px;
+  font-family: 'Indie Flower', cursive;
 }
 
 .clock {
@@ -33,13 +39,17 @@ p {
   width: 300px;
   height: 300px;
   padding-top: 30px;
-  margin: 55px auto;
+  margin: 45px auto;
   display: inline-block;
-
   background-color: white;
 }
 
 #elapsedTime {
-  margin-top: 100px;
+  margin-top: 83px;
+}
+
+h1 {
+  font-family: 'Indie Flower', cursive;
+  font-size: 50px;
 }
 
