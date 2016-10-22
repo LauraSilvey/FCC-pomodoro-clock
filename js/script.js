@@ -67,18 +67,24 @@ $(document).ready(function(){
   // adjusts work time based on plus or minus button clicks
   $("#workPlus, #workMinus").click(function(){
     var newMinute = $("#workTime").html();
-    if(newMinute > 1){
-      $(this).attr("id") === "workPlus" ? newMinute = parseInt(newMinute) + 1 : newMinute = parseInt(newMinute) - 1;
+    if($(this).attr("id") === "workMinus" && newMinute > 1){
+      newMinute = parseInt(newMinute) - 1;
       $("#workTime").html(newMinute);  
+    }else if($(this).attr("id") === "workPlus" && newMinute > 0){
+      newMinute = parseInt(newMinute) + 1;
+      $("#workTime").html(newMinute);
     }
     work();
   });
   // adjusts rest time based on plus or minus button clicks
   $("#breakPlus, #breakMinus").click(function(){
     var newMinute = $("#breakTime").html();
-    if(newMinute > 1){
-      $(this).attr("id") === "breakPlus" ? newMinute = parseInt(newMinute) + 1 : newMinute = parseInt(newMinute) - 1;
+    if($(this).attr("id") === "breakMinus" && newMinute > 1){
+      newMinute = parseInt(newMinute) - 1;
       $("#breakTime").html(newMinute);
-    }  
+    }else if($(this).attr("id") === "breakPlus" && newMinute > 0){
+      newMinute = parseInt(newMinute) + 1;
+      $("#breakTime").html(newMinute);
+    } 
   });   
 });
