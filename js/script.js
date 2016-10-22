@@ -44,9 +44,11 @@ function countdown(){
   timer = setTimeout(function(){
   	if(minutes === 0 && tensSec === 0 && onesSec === 0){
   		rest();
+      $(".clock").css("background-color", "#FE938C");
   		changeTime();
   		countdown();
   	}else{
+      $(".clock").css("background-color", "#A8C686");
   	  changeTime();
       countdown();	
   	}  
