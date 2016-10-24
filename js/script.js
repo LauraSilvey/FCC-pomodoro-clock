@@ -39,19 +39,18 @@ function changeTime(){
   tensSeconds();  
   $("#elapsedTime").html(minutes + ":" + tensSec + onesSec);
 }
+// switch from work to break and back again when timer hits 0:00
+function switchSession(){
+  if(minutes === 0 && tensSec === 0 && onesSec === 0){
+    $("#timeTitle").html() === "Work" ? rest() : work();
+  }
+}
 //setTimeout function
 function countdown(){
   timer = setTimeout(function(){
-  	if(minutes === 0 && tensSec === 0 && onesSec === 0){
-  		rest();
-      $(".clock").css("background-color", "#FE938C");
-  		changeTime();
-  		countdown();
-  	}else{
-      $(".clock").css("background-color", "#A8C686");
-  	  changeTime();
-      countdown();	
-  	}  
+    switchSession();
+    changeTime();
+  	countdown();
   }, 1000);	
 }
 
@@ -63,6 +62,7 @@ $(document).ready(function(){
       countdown();
  	  }else{
   	  timerOn = false;
+      $(".clock").css("background-color", "white");
    	  clearTimeout(timer);
     }
   });
