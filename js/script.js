@@ -45,10 +45,15 @@ function switchSession(){
     $("#timeTitle").html() === "Work" ? rest() : work();
   }
 }
+// switch color of timer to green for work and red for break
+function switchColor(){
+  $("#timeTitle").html() === "Work" ? $(".clock").css("background-color", "#C8FFBE") : $(".clock").css("background-color", "#FE938C");
+}
 //setTimeout function
 function countdown(){
   timer = setTimeout(function(){
     switchSession();
+    switchColor();
     changeTime();
   	countdown();
   }, 1000);	
