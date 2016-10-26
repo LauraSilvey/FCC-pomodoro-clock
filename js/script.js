@@ -4,6 +4,8 @@ var onesSec = 0;
 var timer;
 var timerOn = false;
 
+var audio = new Audio ("http://onlineclock.net/audio/options/bird-song.mp3");
+
 //displays work timer in #elapsedTime area
 function work(){
   $("#timeTitle").html("Work");
@@ -43,6 +45,7 @@ function changeTime(){
 function switchSession(){
   if(minutes === 0 && tensSec === 0 && onesSec === 0){
     $("#timeTitle").html() === "Work" ? rest() : work();
+    audio.play();
   }
 }
 // switch color of timer to green for work and red for break
