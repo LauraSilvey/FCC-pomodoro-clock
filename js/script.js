@@ -3,7 +3,6 @@ var tensSec = 0;
 var onesSec = 0;
 var timer;
 var timerOn = false;
-
 var audio = new Audio ("http://onlineclock.net/audio/options/bird-song.mp3");
 
 //displays work timer in #elapsedTime area
@@ -41,6 +40,17 @@ function changeTime(){
   tensSeconds();  
   $("#elapsedTime").html(minutes + ":" + tensSec + onesSec);
 }
+// start timer
+function startTimer(){
+  timerOn = true;
+  countdown(); 
+}
+// stop timer
+function stopTimer(){
+  timerOn = false;
+  $(".clock").css("background-color", "white");
+  clearTimeout(timer); 
+}
 // switch from work to break and back again when timer hits 0:00
 function switchSession(){
   if(minutes === 0 && tensSec === 0 && onesSec === 0){
@@ -61,17 +71,22 @@ function countdown(){
   	countdown();
   }, 1000);	
 }
+// reset time on timer
+function reset(){
+  $("#workTime").html("25");
+  $("breakTime").html("5");
+  onesSec = 0;
+  tensSec = 0;
+
+}
 
 $(document).ready(function(){
   work();
   $(".clock").click(function(){
- 	  if(!timerOn){
-  	  timerOn = true;
-      countdown();
- 	  }else{
-  	  timerOn = false;
-      $(".clock").css("background-color", "white");
-   	  clearTimeout(timer);
+    if(!timerOn){
+      startTimer();
+ 	 }else{
+  	  stopTimer();
     }
   });
   // adjusts work time based on plus or minus button clicks
@@ -96,5 +111,11 @@ $(document).ready(function(){
       newMinute = parseInt(newMinute) + 1;
       $("#breakTime").html(newMinute);
     } 
-  });   
+  }); 
+  // resets timer to original state 
+  $("#reset").click(function(){
+    stopTimer();
+    reset();
+    work();
+  }); 
 });
