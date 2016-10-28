@@ -74,10 +74,9 @@ function countdown(){
 // reset time on timer
 function reset(){
   $("#workTime").html("25");
-  $("breakTime").html("5");
+  $("#breakTime").html("5");
   onesSec = 0;
   tensSec = 0;
-
 }
 
 $(document).ready(function(){
